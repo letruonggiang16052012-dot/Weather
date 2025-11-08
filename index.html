@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dự báo thời tiết Việt Nam</title>
+  <link rel="stylesheet" href="./sanphamcuoikhoa/css/style3.css" />
+  <link rel="icon" href="../sanphamcuoikhoa/assets/images/logo.png" type="image/png">
+  <!-- Font Awesome để hiển thị icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- 🔹 Thanh điều hướng -->
+  <header class="header">
+    <div class="logo">
+      <img src="../sanphamcuoikhoa/assets/images/logo.png" alt="logo">
+      Weather
+    </div>
+    <nav class="nav">
+      <div class="menu-toggle">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      <div class="nav-container">
+        <ul class="nav-links">
+          <li><a href="index.html">Trang chủ</a></li>
+          <li><a href="forecast.html">Thời tiết theo ngày</a></li>
+          <li><a href="khuvuc.html" class="active">Dự báo theo khu vực</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- 🔹 Nội dung chính -->
+  <main>
+    <section id="currentWeather">
+      <h2>📍 Thời tiết tại vị trí của bạn</h2>
+      <div id="weatherResult">Đang lấy dữ liệu...</div>
+    </section>
+
+    <section id="famousCities">
+      <h2>🏙️ Thời tiết các thành phố nổi tiếng</h2>
+      <div id="cityList" class="city-list"></div>
+    </section>
+  </main>
+
+  <footer></footer>
+
+  <!-- 🔹 Script -->
+  <script src="./sanphamcuoikhoa/js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+      window.embeddedChatbotConfig = {
+        chatbotId: "EhJFa1z5wAUX8mBw5bJ_v",
+        domain: "www.chatbase.co"
+      }
+    </script>
+    <script
+      src="https://www.chatbase.co/embed.min.js"
+      chatbotId="EhJFa1z5wAUX8mBw5bJ_v"
+      domain="www.chatbase.co"
+      defer>
+    </script>
+</body>
+</html>
