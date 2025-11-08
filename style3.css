@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* NỀN TRANG */
+body {
+  background-image: linear-gradient(to bottom, rgba(135, 206, 235, 0.6), rgba(255, 255, 255, 0.6)),
+                    url('../assets/images/sky-background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* THANH HEADER + NAV */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 10px 20px;
+  position: relative;
+  z-index: 999;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: blue;
+}
+
+.logo > img {
+  width: 40px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.nav {
+  flex: 1;
+}
+
+.nav-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  transition: all 0.5s ease;
+}
+
+.nav-links a:hover {
+  color: #00aaff;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+}
+
+.icons a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 15px;
+  font-size: 18px;
+  transition: all 0.5s ease;
+}
+
+.icons a:hover {
+  color: #00aaff;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* PHẦN NỘI DUNG CHÍNH */
+main {
+  width: 90%;
+  max-width: 1000px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+section {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 40px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* WEATHER BOX */
+#weatherResult {
+  background-color: #ffffff;
+  color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  margin: 20px auto;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* CITY LIST */
+.city-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.city-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  width: 200px;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.city-card:hover {
+  transform: translateY(-5px);
+  background: #e3f2fd;
+}
+
+.city-card img {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: white;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* RESPONSIVE MENU */
+@media screen and (max-width: 768px) {
+  .logo {
+    width: 50%;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .nav-container {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    padding: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .icons {
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-container.active {
+    display: flex;
+  }
+}

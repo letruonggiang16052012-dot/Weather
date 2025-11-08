@@ -1,0 +1,270 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(to bottom, rgba(135, 206, 235, 0.6), rgba(255, 255, 255, 0.6)),
+                    url('../assets/images/sky-background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* ========== HEADER (đồng bộ nav đẹp) ========== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7); /* nền đen mờ nổi bật */
+  color: #fff;
+  padding: 10px 20px;
+  z-index: 999;
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: blue;
+}
+
+.logo img {
+  width: 40px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.nav {
+  flex: 1;
+}
+
+.nav-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  transition: all 0.5s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #00aaff;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+}
+
+.icons a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 15px;
+  font-size: 18px;
+  transition: all 0.5s ease;
+}
+
+.icons a:hover {
+  color: #00aaff;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Responsive nav */
+@media screen and (max-width: 768px) {
+  .logo {
+    width: 50%;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .nav-container {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    padding: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .icons {
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-container.active {
+    display: flex;
+  }
+}
+
+/* ========== MAIN CONTENT ========== */
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  min-height: 80vh;
+}
+
+/* ===== WEATHER BOX (phần trắng giữa trang) ===== */
+.weather-box {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  padding: 50px 40px;
+  max-width: 700px;
+  margin: 100px auto;
+  text-align: center;
+  backdrop-filter: blur(6px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.weather-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.weather-box h2 {
+  color: #003366;
+  font-size: 30px;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.weather-box p {
+  color: #333;
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.weather-box input {
+  padding: 12px 15px;
+  font-size: 16px;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  width: 260px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.weather-box input:focus {
+  border-color: #00aaff;
+  box-shadow: 0 0 8px rgba(0, 170, 255, 0.6);
+}
+
+.weather-box button {
+  margin-left: 10px;
+  padding: 12px 25px;
+  background-color: #00aaff;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.weather-box button:hover {
+  background-color: #0088cc;
+  transform: translateY(-2px);
+}
+
+/* Kết quả hiển thị */
+#result {
+  background: rgba(255, 255, 255, 0.9);
+  color: #222;
+  padding: 25px;
+  border-radius: 12px;
+  border: 2px solid #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  max-width: 500px;
+  margin: 30px auto;
+  font-size: 18px;
+  line-height: 1.7;
+  backdrop-filter: blur(6px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#result:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+#result ul {
+  list-style: none;
+  padding: 0;
+}
+
+#result li {
+  background: rgba(255, 255, 255, 0.8);
+  margin: 8px 0;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #f1f1f1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#result img {
+  width: 40px;
+  height: 40px;
+}
+
+#result h4 {
+  color: #0077b6;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+/* Hiệu ứng hiện dần */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

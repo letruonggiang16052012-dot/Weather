@@ -1,0 +1,240 @@
+/* ===== RESET CƠ BẢN ===== */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Segoe UI", "Roboto", sans-serif;
+  background-image: linear-gradient(to bottom, rgba(135, 206, 250, 0.6), rgba(255, 255, 255, 0.8)),
+                    url('../assets/images/sky-background.png'); /* 👉 bạn tự thêm link ảnh nền bầu trời tại đây */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* ===== LOGIN & SIGNUP CHUNG ===== */
+.login, .signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  backdrop-filter: blur(5px);
+}
+
+.login__container,
+.signup__container {
+  width: 100%;
+  max-width: 420px;
+  padding: 30px 25px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 100, 255, 0.2);
+  animation: fadeInDown 1s ease both;
+}
+
+/* ===== TIÊU ĐỀ FORM ===== */
+.login__container h1,
+.signup__container h1 {
+  margin-bottom: 25px;
+  font-size: 2rem;
+  text-align: center;
+  color: #0077b6;
+  font-weight: bold;
+}
+
+/* ===== FORM CƠ BẢN ===== */
+.login__container form,
+.signup__container form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin-bottom: 8px;
+  font-size: 1rem;
+  color: #004080;
+}
+
+form input {
+  padding: 12px;
+  border: 1px solid #a8dadc;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  outline: none;
+  transition: 0.3s;
+}
+
+form input:focus {
+  border-color: #00b4d8;
+  box-shadow: 0 0 10px rgba(0, 180, 216, 0.4);
+}
+
+/* ===== NÚT ĐĂNG NHẬP / ĐĂNG KÝ ===== */
+form button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #00aaff, #0077b6);
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 119, 182, 0.4);
+}
+
+/* ===== LINK ĐĂNG KÝ / QUÊN MẬT KHẨU ===== */
+form a {
+  text-align: center;
+  font-size: 1rem;
+  text-decoration: none;
+  color: #0077b6;
+  transition: color 0.3s ease;
+}
+
+form a:hover {
+  color: #0096c7;
+}
+
+/* ===== NÚT CHUYỂN TRANG (LOGIN <-> SIGNUP) ===== */
+.login__registerButton,
+.signup__registerButton {
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  color: #0077b6;
+  background: transparent;
+  font-size: 1.1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.login__registerButton:hover,
+.signup__registerButton:hover {
+  color: #00b4d8;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: rgba(0, 51, 102, 0.9);
+  color: #f0f9ff;
+  padding: 50px 20px 30px;
+  text-align: left;
+  animation: fadeInUp 1s ease-out;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-section {
+  flex: 1 1 300px;
+  margin: 20px 10px;
+}
+
+.footer-section h3, .footer-section h4 {
+  color: #90e0ef;
+  margin-bottom: 15px;
+}
+
+.footer-section p, .footer-section a {
+  line-height: 1.6;
+  color: #d8f3dc;
+}
+
+.footer-section a {
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.footer-section a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #00b4d8;
+  transition: width 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #00b4d8;
+}
+
+.footer-section a:hover::after {
+  width: 100%;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  color: #caf0f8;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-section {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+}

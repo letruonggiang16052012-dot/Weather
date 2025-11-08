@@ -1,0 +1,297 @@
+/* ===== RESET + NỀN ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(135, 206, 235, 0.6),
+      rgba(255, 255, 255, 0.6)
+    ),
+    url('../assets/images/sky-background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ===== HEADER GIỮ NGUYÊN ===== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 10px;
+  z-index: 999;
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: blue;
+}
+
+.logo > img {
+  width: 40px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.nav {
+  flex: 1;
+}
+
+.nav-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links > li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  transition: all 0.5s ease;
+}
+
+.nav-links a:hover {
+  color: #00aaff;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+}
+
+.icons a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 15px;
+  font-size: 18px;
+  transition: all 0.5s ease;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ===== PHẦN DỰ BÁO THỜI TIẾT ===== */
+main {
+  margin-top: 40px;
+}
+
+.weather-box {
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #fff;
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 600px;
+  margin: 40px auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(6px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.weather-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.weather-box h2 {
+  color: #0077b6;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Ô nhập & nút */
+.weather-box input {
+  width: 70%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 16px;
+}
+
+.weather-box button {
+  padding: 10px 15px;
+  background-color: #0077b6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.weather-box button:hover {
+  background-color: #00aaff;
+}
+
+/* Kết quả */
+#regionResult {
+  background: rgba(255, 255, 255, 0.9);
+  color: #222;
+  padding: 25px;
+  border-radius: 12px;
+  border: 2px solid #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  max-width: 500px;
+  margin: 30px auto;
+  font-size: 18px;
+  line-height: 1.7;
+  backdrop-filter: blur(6px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+#regionResult:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.weather-card h3 {
+  color: #0077b6;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.weather-card img {
+  width: 80px;
+  height: 80px;
+}
+
+/* Thành phố nổi tiếng */
+#cityList {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 40px auto;
+  max-width: 900px;
+}
+
+.city-card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #fff;
+  border-radius: 12px;
+  padding: 15px 20px;
+  width: 160px;
+  text-align: center;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.city-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+.city-card h4 {
+  color: #0077b6;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.city-card img {
+  width: 60px;
+  height: 60px;
+}
+
+.city-card p {
+  margin: 4px 0;
+  font-size: 15px;
+  color: #333;
+}
+
+/* ===== RESPONSIVE GIỐNG NAV ===== */
+@media screen and (max-width: 768px) {
+  .logo {
+    width: 50%;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .nav-container {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    padding: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .icons {
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-container.active {
+    display: flex;
+  }
+
+  /* --- phần weather responsive giống phong cách nav --- */
+  .weather-box {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .weather-box input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  #regionResult {
+    width: 90%;
+    padding: 20px;
+  }
+
+  #cityList {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .city-card {
+    width: 80%;
+  }
+}
